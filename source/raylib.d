@@ -1038,8 +1038,8 @@ c_long GetFileModTime(const(char)* fileName); // Get file modification time (las
 // Compression/Encoding functionality
 ubyte* CompressData(ubyte* data, int dataLength, int* compDataLength); // Compress data (DEFLATE algorithm)
 ubyte* DecompressData(ubyte* compData, int compDataLength, int* dataLength); // Decompress data (DEFLATE algorithm)
-char* EncodeDataBase64(const ubyte* data, int dataLength, int *outputLength); Check// Encode data to Base64 string
-ubyte* DecodeDataBase64(ubyte* data, int *outputLength); Check// Decode Base64 string data
+char* EncodeDataBase64(const(ubyte)* data, int dataLength, int *outputLength); // Encode data to Base64 string
+ubyte* DecodeDataBase64(ubyte* data, int *outputLength); // Decode Base64 string data
 
 // Persistent storage management
 bool SaveStorageValue(uint position, int value); // Save integer value to storage file (to defined position), returns true on success
@@ -1449,9 +1449,9 @@ bool CheckCollisionBoxSphere(BoundingBox box, Vector3 center, float radius); // 
 bool CheckCollisionRaySphere(Ray ray, Vector3 center, float radius); // Get collision info between ray and sphere
 bool CheckCollisionRaySphereEx(Ray ray, Vector3 center, float radius, Vector3* collisionPoint); // Get collision info between ray and sphere, returns collision point
 bool CheckCollisionRayBox(Ray ray, BoundingBox box); // Detect collision between ray and box
-RayHitInfo GetCollisionRayModel(Ray ray, Model model); // Get collision info between ray and model
-RayHitInfo GetCollisionRayMesh(Ray ray, Mesh mesh, Matrix transform); // Get collision info between ray and mesh
-RayHitInfo GetCollisionRayTriangle(Ray ray, Vector3 p1, Vector3 p2, Vector3 p3); // Get collision info between ray and triangle
+RayCollision GetCollisionRayModel(Ray ray, Model model); // Get collision info between ray and model
+RayCollision GetCollisionRayMesh(Ray ray, Mesh mesh, Matrix transform); // Get collision info between ray and mesh
+RayCollision GetCollisionRayTriangle(Ray ray, Vector3 p1, Vector3 p2, Vector3 p3); // Get collision info between ray and triangle
 
 //------------------------------------------------------------------------------------
 // Audio Loading and Playing Functions (Module: audio)
