@@ -3,64 +3,52 @@ module raylib_types;
 
 import raylib;
 
-// Vector2 type
+// Vector2, 2 components
 struct Vector2
 {
-    float x = 0.0f;
-    float y = 0.0f;
+    float x = 0.0f; // Vector x component
+    float y = 0.0f; // Vector y component
     mixin Linear;
 }
 
-// Vector3 type
+// Vector3, 3 components
 struct Vector3
 {
-    float x = 0.0f;
-    float y = 0.0f;
-    float z = 0.0f;
+    float x = 0.0f; // Vector x component
+    float y = 0.0f; // Vector y component
+    float z = 0.0f; // Vector z component
     mixin Linear;
 }
 
-// Vector4 type
+// Vector4, 4 components
 struct Vector4
 {
-    float x = 0.0f;
-    float y = 0.0f;
-    float z = 0.0f;
-    float w = 0.0f;
+    float x = 0.0f; // Vector x component
+    float y = 0.0f; // Vector y component
+    float z = 0.0f; // Vector z component
+    float w = 0.0f; // Vector w component
     mixin Linear;
 }
 
-// Quaternion type, same as Vector4
+// Quaternion type, 4 components (Vector4 alias)
 alias Quaternion = Vector4;
 
-// Matrix type (OpenGL style 4x4 - right handed, column major)
+// Matrix type, 4x4 components, column major, OpenGL style, right handed
 struct Matrix
 {
-    float m0 = 0.0f;
-    float m4 = 0.0f;
-    float m8 = 0.0f;
-    float m12 = 0.0f;
-    float m1 = 0.0f;
-    float m5 = 0.0f;
-    float m9 = 0.0f;
-    float m13 = 0.0f;
-    float m2 = 0.0f;
-    float m6 = 0.0f;
-    float m10 = 0.0f;
-    float m14 = 0.0f;
-    float m3 = 0.0f;
-    float m7 = 0.0f;
-    float m11 = 0.0f;
-    float m15 = 0.0f;
+    float m0 = 0.0f, m4 = 0.0f, m8 = 0.0f, m12 = 0.0f; // Matrix first row (4 components)
+    float m1 = 0.0f, m5 = 0.0f, m9 = 0.0f, m13 = 0.0f; // Matrix second row (4 components)
+    float m2 = 0.0f, m6 = 0.0f, m10 = 0.0f, m14 = 0.0f; // Matrix third row (4 components)
+    float m3 = 0.0f, m7 = 0.0f, m11 = 0.0f, m15 = 0.0f; // Matrix fourth row (4 components)
 }
 
 // Rectangle type
 struct Rectangle
 {
-    float x;
-    float y;
-    float width;
-    float height;
+    float x; // Rectangle top-left corner position x
+    float y; // Rectangle top-left corner position y
+    float width; // Rectangle width
+    float height; // Rectangle height
     alias w = width;
     alias h = height;
 }
